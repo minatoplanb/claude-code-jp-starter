@@ -1,0 +1,24 @@
+{
+  "name": "claude-code-jp-starter",
+  "version": "1.0.0",
+  "description": "Claude Code hooks & templates for Japanese developers — SJIS protection, supply chain safety, and more",
+  "main": "install.js",
+  "scripts": {
+    "install-hooks": "node install.js",
+    "dry-run": "node install.js --dry-run"
+  },
+  "keywords": [
+    "claude-code",
+    "hooks",
+    "japanese",
+    "sjis",
+    "shift-jis",
+    "developer-tools",
+    "security"
+  ],
+  "author": "David Hsu (@DavidAi311)",
+  "license": "MIT",
+  "dependencies": {
+    "encoding-japanese": "^2.2.0"
+  }
+}

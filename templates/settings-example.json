@@ -1,0 +1,43 @@
+{
+  "_comment": "Claude Code 設定例 — claude-code-jp-starter のフック設定を含む",
+  "_comment2": "このファイルは参考用です。install.js が自動で ~/.claude/settings.json に設定を追加します。",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit",
+        "hooks": [
+          { "type": "command", "command": "node ~/.claude/hooks/jp-starter/sjis-guard.js", "timeout": 10 }
+        ]
+      },
+      {
+        "matcher": "Write",
+        "hooks": [
+          { "type": "command", "command": "node ~/.claude/hooks/jp-starter/sjis-guard.js", "timeout": 10 }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          { "type": "command", "command": "node ~/.claude/hooks/jp-starter/package-safety.js", "timeout": 10 },
+          { "type": "command", "command": "node ~/.claude/hooks/jp-starter/danger-guard.js", "timeout": 10 }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit",
+        "hooks": [
+          { "type": "command", "command": "node ~/.claude/hooks/jp-starter/sjis-guard.js", "timeout": 10 },
+          { "type": "command", "command": "node ~/.claude/hooks/jp-starter/ja-format.js", "timeout": 10 }
+        ]
+      },
+      {
+        "matcher": "Write",
+        "hooks": [
+          { "type": "command", "command": "node ~/.claude/hooks/jp-starter/sjis-guard.js", "timeout": 10 },
+          { "type": "command", "command": "node ~/.claude/hooks/jp-starter/ja-format.js", "timeout": 10 }
+        ]
+      }
+    ]
+  }
+}
